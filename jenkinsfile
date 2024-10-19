@@ -9,13 +9,6 @@ pipeline {
     }
 
         stages {
-        // stage('clone') {
-        //     steps {
-        //         script {
-        //         git 'https://github.com/YoavKatzz/spring-petclinic.git'
-        //         }
-        //     }
-        // }
         stage('Build') {
             steps {
                 script {
