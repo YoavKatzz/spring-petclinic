@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'JB_Final_Project'
+        IMAGE_NAME = 'jb_final_project'
         VERSION = "v${env.BUILD_NUMBER}"
         REPO = 'yoavkatz'
         CREDENTIALS_ID = 'docker_yoav'
