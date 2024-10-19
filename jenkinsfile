@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'jb_final_project'
-        VERSION = "v${env.BUILD_NUMBER}"
+        VERSION = "${env.BUILD_NUMBER}"
         REPO = 'yoavkatz'
         CREDENTIALS_ID = 'docker_yoav'
     }
@@ -24,6 +24,7 @@ pipeline {
                     docker.withRegistry("https://index.docker.io/v1/", "${CREDENTIALS_ID}") {
                         sh '''
                         docker tag  ${IMAGE_NAME}:${VERSION}  ${REPO}/${IMAGE_NAME}:latest
+                        docker push ${REPO}/${IMAGE_NAME}:${VERSION}
                         docker push ${REPO}/${IMAGE_NAME}:latest
                         '''
                     }
