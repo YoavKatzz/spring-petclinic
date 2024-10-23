@@ -1,0 +1,19 @@
+deployment:
+  Imagename: yoavkatz/jb_final_project
+  label: petclinic_app
+  labelselector: petclinic_app
+  targetport: 8080
+service:
+  type: LoadBalancer
+  label: petclinic_app
+  labelselector: petclinic_app
+  port: 80
+mysql:
+  Imagename: mysql:5.7
+  label: petclinic
+  labelselector: petclinic
+  root_password:
+  allow_empty_password: true
+  username: petclinic
+  password: petclinic
+  database: petclinic
